@@ -14,6 +14,11 @@ public class MessageEvent {
     public static final int TYPE_FORGOT_PASSWORD = 3;
     //MainFragment
     public  static final int TYPE_MAIN_FRAGMENT = 4;
+    //
+    public static final int TYPE_RIGHT_MENU_UNLOGIN = 5;
+
+    public static final int TYPE_RIGHT_MENU_LOGIN = 6;
+
 
 
     private int type;

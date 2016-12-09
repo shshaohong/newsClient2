@@ -3,8 +3,10 @@ package com.edu.feicui.newsclient.biz;
 import android.content.Context;
 
 import com.android.volley.Response;
+import com.edu.feicui.newsclient.activity.CommentActivity;
 import com.edu.feicui.newsclient.utils.Url;
 import com.edu.feicui.newsclient.utils.VolleyHttp;
+import com.edu.feicui.newsclient.xlistview.XListView;
 
 /**
  * Created by Administrator on 2016-12-1.
@@ -17,4 +19,6 @@ public class CommentManager {
         VolleyHttp volleyHttp = new VolleyHttp(context);
         volleyHttp.sendStringRequest(Url.GET_COMMENT_NUM + "?ver=0&nid=" + nid,listener,errorListener);
     }
+
+
 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#a00"
+        >
+        <ImageView
+            android:id="@+id/iv_comments_back"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/back"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="评论"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+    <com.edu.feicui.newsclient.xlistview.XListView
+        android:id="@+id/lv_comment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+    </com.edu.feicui.newsclient.xlistview.XListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        >
+        <EditText
+            android:id="@+id/et_comments_in"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="请评论"
+            android:layout_gravity="center_vertical"
+            />
+        <requestFocus/>
+        <ImageView
+            android:id="@+id/iv_comments_in"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/send"
+            android:layout_marginLeft="5dp"
+            android:paddingBottom="5dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

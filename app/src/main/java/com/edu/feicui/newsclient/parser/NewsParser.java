@@ -1,6 +1,7 @@
 package com.edu.feicui.newsclient.parser;
 
 import com.edu.feicui.newsclient.entity.BaseEntity;
+import com.edu.feicui.newsclient.entity.Comments;
 import com.edu.feicui.newsclient.entity.News;
 import com.edu.feicui.newsclient.entity.NewsType;
 import com.edu.feicui.newsclient.entity.SubType;
@@ -42,5 +43,20 @@ public class NewsParser {
         }
         return null;
     }
+    //解析评论列表
+    public static List<Comments> parseComments(String json){
+        Gson gson = new Gson();
+        Type type = new TypeToken<BaseEntity<List<Comments>>>(){}.getType();
+        BaseEntity<List<Comments>> baseEntity = gson.fromJson(json,type);
+
+        if(baseEntity != null){
+
+            return baseEntity.getData();
+        }
+        return null;
+    }
+
+
+
 
 }

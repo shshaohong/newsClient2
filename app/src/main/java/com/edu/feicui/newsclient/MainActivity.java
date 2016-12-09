@@ -165,6 +165,7 @@ public class MainActivity extends BaseActivity {
         ivMenuLeft = (ImageView) findViewById(R.id.iv_left_menu_icon);
         ivMenuRight = (ImageView) findViewById(R.id.iv_right_menu_icon);
         tvTitle = (TextView) findViewById(R.id.tv_title);
+        ivMenuRight.setImageResource(R.mipmap.ic_title_share_default);
     }
 
     //当按下back键时会调用这个方法

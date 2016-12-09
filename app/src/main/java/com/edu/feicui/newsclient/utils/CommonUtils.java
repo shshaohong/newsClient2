@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Administrator on 2016-11-28.
@@ -42,5 +44,22 @@ public class CommonUtils {
     public static void showLongToast(Context context,String msg){
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
+
+    public static boolean verifyEmail(String email){
+        String regex = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+    public static boolean verifyName(String name){
+        String regex = "^[a-zA-Z]+[a-zA-Z0-9_]*$";
+        return Pattern.matches(regex,name);
+    }
+
+    public static boolean verifyPassword(String password){
+        String regex = "[a-zA-Z0-9_]{6,24}";
+        return Pattern.matches(regex,password);
+    }
+
 
 }

@@ -32,5 +32,12 @@ public class NewsManager {
         http.sendStringRequest(Url.GET_NEWS + "?ver=0&subid=" + subid + "&dir=" + dir +
                 "&nid=" + nid + "&stamp=" + stamp + "&cnt=20", listener, errorListener);
     }
+    //获取评论列表
+    public static void  getComment(Context context, int nid, int cid,int dir, Response.Listener<String> listener, Response.ErrorListener errorListener){
+        String stamp = CommonUtils.getCurrentDate();
+        VolleyHttp http = new VolleyHttp(context);
+        http.sendStringRequest(Url.COMMENTS + "?ver=0&nid="+nid+"&type=1&stamp="+stamp
+                +"&cid="+cid+"&dir="+dir+"&cnt=20",listener,errorListener);
+    }
 
 }

@@ -40,7 +40,7 @@ public class NewsDBManager {
         cursor = null;
         return list;
     }
-  
+
     //保存新闻分类数据
     public void saveNewsType(List<SubType> list){
         if(list == null || list.size() == 0){

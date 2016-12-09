@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:hint="请输入用户昵称"
         android:ems="10"
-        android:paddingTop="15dp"
+        android:layout_marginTop="15dp"
         >
 
     </EditText>

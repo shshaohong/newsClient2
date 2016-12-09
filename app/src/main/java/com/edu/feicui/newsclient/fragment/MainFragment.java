@@ -53,8 +53,9 @@ public class MainFragment extends Fragment {
     private NewsAdapter newsAdapter;
 
 
-    //
+    //分类编号
     private int subid = 1;
+    //加载数据模式
     private int refreshMode = 1;
     @Nullable
     @Override
@@ -72,7 +73,7 @@ public class MainFragment extends Fragment {
         //启用上拉加载
         listView.setPullLoadEnable(true);
 
-        //启动下拉
+        //启动下拉刷新
         listView.setPullRefreshEnable(true);
 
         listView.setXListViewListener(listViewListener);
@@ -88,8 +89,7 @@ public class MainFragment extends Fragment {
         return view;
     }
 
-//    SubType subType = (SubType) parent.getItemAtPosition(i);
-//    subid = subType.getSubid();
+
     private AdapterView.OnItemClickListener typeItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
@@ -217,10 +217,11 @@ public class MainFragment extends Fragment {
     private Response.ErrorListener errorListener = new Response.ErrorListener() {
         @Override
         public void onErrorResponse(VolleyError volleyError) {
+
+            Toast.makeText(getActivity(),"加载数据失败",Toast.LENGTH_SHORT).show();
             //取消进度对话框
             listView.stopLoadMore();
             listView.stopRefresh();
-            Toast.makeText(getActivity(),"加载数据失败",Toast.LENGTH_SHORT).show();
         }
     };
 }
