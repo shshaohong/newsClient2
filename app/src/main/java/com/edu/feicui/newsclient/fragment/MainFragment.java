@@ -85,6 +85,7 @@ public class MainFragment extends Fragment {
         loadNextNews(true);
 
         //显示加载进度对话框
+
         ((BaseActivity)getActivity()).showDialog(null,false);
         return view;
     }
@@ -222,6 +223,9 @@ public class MainFragment extends Fragment {
             //取消进度对话框
             listView.stopLoadMore();
             listView.stopRefresh();
+
+            ((BaseActivity)getActivity()).cancelDialog();
+
         }
     };
 }

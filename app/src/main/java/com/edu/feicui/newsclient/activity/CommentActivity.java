@@ -144,7 +144,7 @@ public class CommentActivity extends BaseActivity {
         String token = entity.getData().getToken();
         String imei = CommonUtils.getIMEI(this);
         String name = SharedPreferencesUtils.readName(this);
-        if(name.equals("")){
+        if(token.equals("") ){
             CommonUtils.showShortToast(this,"请登录后再评论!");
             return;
         }else {
